@@ -9,11 +9,11 @@ correctly it gets a point, else player gets a point. First
 one to reach 100 points wins.
 
 Motive for the game is to learn the very basics of HTML, CSS 
-and Javascript.
+and Javascript. And Github.
 
 Author:
 Mika Jokinen
 
 Credit:
-John Krutch's Predictor. Published in COMPUTE!'s Gazette,
-June 1986 issue. This game copies its logic from John.
+Game copies its logic from John Krutch's Predictor. 
+Published in COMPUTE!'s Gazette, June 1986 issue.

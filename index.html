@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" type="text/css" rel="stylesheet" >
+        <link href="style/style.css" type="text/css" rel="stylesheet">
+        <title>Predictor</title>
+    </head>
+
+<body onkeydown="handleKey(event)" onload="handleClickNewGame()">
+
+    <div class="header">
+        <h1>Predictor</h1>
+    </div>
+
+    <div class="intro">
+        <p>Keep clicking left or right. CPU tries to predict your click. 100 points to win.</p>
+    </div>
+
+    <div class="game-table">
+        <div class="upper-half">
+            <div class="computer">
+                <img class="computer" src="resource/chip.png" alt="microprocessor" width="40" height="40">
+            </div>
+            <div class="computer-buttons">
+                <button id="computer-left"></button>
+                <button id="computer-right"></button>
+            </div>
+            <div id="computer-score">
+                0
+            </div>
+        </div>
+
+        <div class="lower-half">
+            <div id="player-score">
+                0
+            </div>
+            <div class="player-buttons">
+                <button id="player-left" onclick="handleClickLeft();">Left</button>
+                <button id="player-right" onclick="handleClickRight();">Right</button>
+            </div>
+            <div class="player">
+            <div id="game-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-game-button">
+            <button id="reset-game" onclick="handleClickNewGame();">Restart</button>
+    </div>
+
+    <div class="keys">
+        To play: mouse, or arrow left &amp right. 'r' to restart.
+    </div>
+
+    <div class="credit">
+        This game is copied from 'Predictor' by John Krutch, published in <a href="https://archive.org/details/1986-06-computegazette">COMPUTE!'s Gazette</a>, June 1986, page 58.
+        For Commodore 64, Plus/4, Commodore 16 and the VIC.
+        </br></br>
+        <i>Greetings to all who used to type in their games from magazines. 
+        Or used to tune into a public radio station once a week to record a broadcasted 
+        game or program to tape.</i>
+    </div>
+<script src="js/script.js"></script>
+
+</body>
+</html>
+
+

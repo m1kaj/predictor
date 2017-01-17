@@ -17,6 +17,11 @@ function initialize() {
     gameOver = false;
 
     document.getElementById("game-result").innerHTML = " ";
+    document.getElementById("player-left").addEventListener("touchstart", preventZoom);
+    document.getElementById("player-right").addEventListener("touchstart", preventZoom);
+    document.getElementById("reset-game").addEventListener("click", handleClickNewGame);
+    document.getElementById("player-left").addEventListener("click", handleClickLeft);
+    document.getElementById("player-right").addEventListener("click", handleClickRight);
 }
 
 function addLeft(i) {
@@ -70,11 +75,13 @@ function playPoint(direction) {
         if (aiScore > 99) {
             gameOver = true;
             displayWinner('CPU wins in ');
+            removeClickHandlers();
         }
 
         if (playerScore > 99) {
             gameOver = true;
             displayWinner('You win in ');
+            removeClickHandlers();
         }
     }
 
@@ -165,4 +172,21 @@ function displayWinner(winner) {
     var t1 = d1.getTime();
     var endNote = winner + ((t1 - d0.getTime()) / 1000) + ' s';
     document.getElementById("game-result").innerHTML = endNote;
+}
+
+// Finally. I get to copy-paste code from Stack Overflow without
+// understanding the details. This seems to help prevent Zoom
+// function in Android when double tapping the play buttons.
+
+function preventZoom(e) {
+  var t2 = e.timeStamp;
+  var t1 = e.currentTarget.dataset.lastTouch || t2;
+  var dt = t2 - t1;
+  var fingers = e.touches.length;
+  e.currentTarget.dataset.lastTouch = t2;
+
+  if (!dt || dt > 500 || fingers > 1) return; // not double-tap
+
+  e.preventDefault();
+  e.target.click();
 }

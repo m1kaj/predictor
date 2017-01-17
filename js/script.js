@@ -75,13 +75,11 @@ function playPoint(direction) {
         if (aiScore > 99) {
             gameOver = true;
             displayWinner('CPU wins in ');
-            removeClickHandlers();
         }
 
         if (playerScore > 99) {
             gameOver = true;
             displayWinner('You win in ');
-            removeClickHandlers();
         }
     }
 

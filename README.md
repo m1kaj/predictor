@@ -1,6 +1,6 @@
 # predictor
 
-*Simple game similar to Matching Pennies*
+*Simple game similar to [Matching Pennies](https://en.wikipedia.org/wiki/Matching_pennies)*
 
 Player has two buttons to click. Computer tries to predict
 which button player is going to click. After each click, 
